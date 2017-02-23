@@ -1,0 +1,15 @@
+{
+  "name": "torget",
+  "version": "1.0.0",
+  "description": "Front-end for increo, wordpres",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "torget"
+  },
+  "author": "",
+  "license": "ISC"
+}
