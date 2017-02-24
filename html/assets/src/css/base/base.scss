@@ -1,0 +1,22 @@
+body {
+  font-family: $font-family--standard;
+  font-style: normal;
+  font-size: 16px;
+  color: $color--text;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  padding: 0 $gl-gutter/2;
+}
+
+.box {
+  background: tomato;
+  border: 30px solid white;
+}

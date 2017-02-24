@@ -1,0 +1,88 @@
+.form {
+
+}
+
+
+.form--input-text {
+  background: $color--white;
+  padding: $margin;
+  width: 100%;
+  font-weight: 400;
+  font-family: sans-serif;
+  border: 3px solid $color--border;
+
+  &::placeholder {
+    opacity: 0.5;
+    color: #000;
+    transition: $speed opacity;
+  }
+  &:focus::placeholder {
+    opacity: 1;
+  }
+  &:outline {
+    outline: 3px solid red;
+  }
+}
+
+
+.form--label {
+
+}
+
+.form--textarea {
+  resize: none;
+  height: 10em;
+}
+
+.form--button {
+
+  background: $color--secondary;
+  border-radius: 99em;
+  color: #fff;
+  padding: $margin;
+  border: 0;
+  -webkit-appearance: none;
+  @include font-size($fs-p);
+  width: 100%;
+
+}
+
+.form--input-checkbox, .form--input-radio {
+
+  display: none;
+
+  & ~ .form--label {
+
+    cursor: pointer;
+
+    &:before {
+      background: $color--white;
+      padding: 0.6em;
+      content: '';
+      display: inline-block;
+      transition: $speed background, $speed border-color;
+      border: 3px solid $color--border;
+      margin-right: 0.5em;
+      position: relative;
+      top: 0.4em;
+      border-radius: 55em;
+    }
+
+    &:hover:before {
+      border-color: $color--primary
+    }
+
+  }
+
+  &:checked ~ .form--label:before {
+    background: $color--primary;
+    border-color: $color--primary;
+
+  }
+
+}
+
+.form--fieldset {
+  display: inline-block;
+  margin: 0 1em;
+}

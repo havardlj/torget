@@ -1,7 +1,7 @@
 {
   "name": "torget",
   "version": "1.0.0",
-  "description": "Front-end for increo, wordpres",
+  "description": "Front-end for Increo, wWordpress",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,5 +11,8 @@
     "url": "torget"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }

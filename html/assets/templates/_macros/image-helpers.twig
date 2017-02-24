@@ -1,0 +1,67 @@
+{% macro getSrcSet(image, sizes, upscale) %}
+	{%- spaceless %}
+		{% set sizesOut = [] %}
+		{% set allowScaleLarger = upscale | default(false) %}
+
+		{# loop over sizes parameter and generate transforms #}
+		{% for size in sizes %}
+			{%- spaceless %}
+				{% set currentTransform = {} %}
+
+				{% if size.quality is defined %}
+					{% set currentTransform = currentTransform | merge({ quality: size.quality }) %}
+				{% endif %}
+
+				{% if size.width is defined %}
+					{% set currentTransform = currentTransform | merge({ width: size.width }) %}
+				{% endif %}
+
+				{% if size.height is defined %}
+					{% set currentTransform = currentTransform | merge({ height: size.height }) %}
+				{% endif %}
+
+				{% if size.mode is defined %}
+					{% set currentTransform = currentTransform | merge({ mode: size.mode }) %}
+
+
+				{% endif %}
+
+				{# only add transform if original image is larger, or upscale was set to true #}
+				{% if allowScaleLarger or (image.getWidth() >= image.getWidth(currentTransform)) %}
+					{% set sizesOut = sizesOut | merge([currentTransform]) %}
+				{% endif %}
+			{% endspaceless -%}
+		{% endfor %}
+
+		{# if no transform was made, but transform enforces a specific aspect, create it #}
+		{% if sizesOut | length == 0 %}
+			{% set size = sizes[0] %}
+			{% if (size.width is defined) and (size.height is defined) %}
+
+				{% set newHeight = (image.getWidth() * (size.height/size.width)) | round %}
+				{% set currentTransform = { width: image.getWidth(), height: newHeight } %}
+
+				{% if size.mode is defined %}
+					{% set currentTransform = currentTransform | merge({ mode: size.mode }) %}
+
+					{# assumes that you have a asset field named focalPoint that lets the user choose crop position #}
+					{% if (size.mode=='crop') and (image.focalPoint is defined) and (image.focalPoint!='') %}
+						{% set currentTransform = currentTransform | merge({ position: image.focalPoint }) %}
+					{% endif %}
+				{% endif %}
+
+				{% set sizesOut = sizesOut | merge([currentTransform]) %}
+
+			{% endif %}
+		{% endif %}
+
+		{# if any transforms were made, loop over them and output srcset. if not, use original file (means it's smaller than the smallest size) #}
+		{% if sizesOut | length %}
+			{% for size in sizesOut %}
+				{{ image.getUrl(size) }} {{ image.getWidth(size) }}w{% if not loop.last %},{% endif %}
+			{% endfor %}
+		{% else %}
+			{{ image.getUrl() }} {{ image.getWidth() }}w
+		{% endif %}
+	{% endspaceless -%}
+{% endmacro %}

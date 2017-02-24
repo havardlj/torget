@@ -1,0 +1,344 @@
+{% extends '_layouts/main-layout' %}
+
+
+{% block content %}
+
+<div class="style-guide container grid">
+
+  <div class="col-12">
+    <h2 class="heading heading--large">Developers guidelines for Innomed</h2>
+    <p>Written by Magnus Holder Bjørk (<a href="http://www.skogen.io">Skogen</a>)</p>
+  </div>
+
+  <hr />
+
+  <div class="col-12">
+    <h2 class="heading heading--large">Typography</h2>
+  </div>
+
+  <div class="col-12">
+    <p>Primary font: Helvetica, Arial, sans-serif by <a href="#">Someone</a><br />
+    Secondary font: <span class="font-serif">Times, Times New Roman, serif</span> by <a href="#">Someone</a></a>
+  </div>
+
+  <hr class="hr--small" />
+
+  <div class="col-12">
+    <h3 class="heading heading--small" data-namespace=".heading.heading--small">Paragraph</h3>
+
+    <p>Ac tempus suspendisse quam nec dictum adipiscing volutpat risus ad pretium eu euismod adipiscing facilisis faucibus quis aliquam integer dis tristique <a href="#">link color</a> ullamcorper risus condimentum nam condimentum a in tristique. Habitasse imperdiet fames scelerisque eleifend ut consectetur facilisi </p>
+
+    <p>Vestibulum leo a auctor orci augue a nunc in porta odio a a et a aliquam dolor vestibulum. Parturient phasellus mattis adipiscing parturient potenti fusce consectetur massa consectetur turpis consequat torquent penatibus tristique hac a. Ullamcorper scelerisque himenaeos suspendisse facilisi a a curae vestibulum congue pretium integer parturient scelerisque lacinia taciti ad maecenas tincidunt lacus. Adipiscing a hac nunc sociis phasellus rhoncus justo ut suspendisse sed tincidunt a suspendisse parturient.</p>
+
+    <p>Luctus curabitur nostra suscipit parturient lorem condimentum a adipiscing elit eros mollis condimentum parturient a lectus proin. Ultrices ad a molestie habitasse tellus orci magnis neque dui vestibulum justo eleifend cum lectus amet mi vivamus ullamcorper. Etiam molestie scelerisque consectetur adipiscing parturient consectetur dis consectetur pretium cras nunc adipiscing vestibulum est adipiscing a curabitur parturient nostra a viverra nascetur non scelerisque.</p>
+
+  </div>
+
+  <hr class="hr--small" />
+
+  <div class="col-12">
+    <h3 class="heading heading--small" data-namespace=".heading.heading--small">Headings</h3>
+    <p>There are three levels:</p>
+    <p><span class="heading" data-namespace=".heading">Heading</span</p>
+    <p><span class="heading heading--small" data-namespace=".heading.heading--small">Heading small</span></p>
+    <p><span class="heading heading--tiny">Heading tiny</span></p>
+  </div>
+
+  <hr class="hr--small" />
+
+  <div class="col-12">
+    <h3 class="heading heading--small" data-namespace=".heading.heading--small">Lists</h3>
+
+    <pre><code class="language-html">&lt;div class="wysiwyg"&gt;<br />
+&nbsp;&nbsp;&lt;ul&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Content&lt;/li&gt;<br />
+&nbsp;&nbsp;&lt;/ul&gt;<br />
+&lt;/div&gt;<br /></code></pre>
+  </div>
+
+  <div class="col-12">
+    <div class="wysiwyg">
+      <ul>
+        <li>Hello</li>
+        <li>Yolo</li>
+        <li>This is nested
+          <ul>
+            <li>Some other shit</li>
+            <li>Oh yeah</li>
+            <li>More nested shit
+              <ul>
+                <li>Some other shit</li>
+                <li>Oh yeah</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <div class="wysiwyg">
+      <ol>
+        <li>Hello</li>
+        <li>Yolo</li>
+        <li>This is nested
+          <ol>
+            <li>Some other shit</li>
+            <li>Oh yeah</li>
+            <li>More nested shit
+              <ol>
+                <li>Some other shit</li>
+                <li>Oh yeah</li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <hr class="hr--small" />
+
+  <div class="col-12">
+    <h2 class="heading heading--small">Colors and decoration</h2>
+    <div class="wysiwyg">
+      <ul>
+        <li>Site background is #fff</li>
+        <li>Text is #222</li>
+        <li><a href="#">Links are underlined with profile colored border</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="col-12">
+    <h2 class="heading heading--large">Buttons</h2>
+    <a href="#" class="button">.button</a>
+  </div>
+
+  <hr />
+
+  <div class="col-12">
+    <h2 class="heading heading--large">Form and form elements</h2>
+
+    <form class="form grid">
+      <div class="col-3">
+        <label class="form--label" for="form--input-text">Label for form--input-text</label>
+      </div>
+      <div class="col-9">
+        <input type="text" class="form--input-text" id="form--input-text" placeholder=".form--input-text">
+      </div>
+      <div class="col-3">
+        <p>Checkbox</p>
+      </div>
+      <div class="col-9">
+        <input type="checkbox" class="form--input-checkbox" name="form--input-checkbox" id="form--input-checkbox--1" placeholder=".form--input-text">
+        <label class="form--label" for="form--input-checkbox--1">Label for form--input-checkbox--1</label>
+        <br />
+        <input type="checkbox" class="form--input-checkbox" name="form--input-checkbox" id="form--input-checkbox--2" placeholder=".form--input-text">
+        <label class="form--label" for="form--input-checkbox--2">Label for form--input-checkbox--2</label>
+      </div>
+      <div class="col-3">
+        <p>Radio</p>
+      </div>
+      <div class="col-9">
+        <input type="radio" class="form--input-radio" name="form--input-radio" id="form--input-radio--1" placeholder=".form--input-text">
+        <label class="form--label" for="form--input-radio--1">Label for form--input-radio--1</label>
+        <br />
+        <input type="radio" class="form--input-radio" name="form--input-radio" id="form--input-radio--2" placeholder=".form--input-text">
+        <label class="form--label" for="form--input-radio--2">Label for form--input-radio--2</label>
+      </div>
+      <div class="col-3">
+        <label class="form--label" for="form--textarea">Label for form--textarea</label>
+      </div>
+      <div class="col-9">
+        <textarea class="form--textarea" id="form--textarea" placeholder=".form--textarea"></textarea>
+      </div>
+      <div class="col-9" push-left="off-3">
+        <button class="button form--button">.button.form-button</button>
+      </div>
+    </form>
+
+  </div>
+
+  <hr />
+
+  <div class="col-12">
+    <h2 class="heading heading--large">Helper classes</h2>
+    <p>These classes have !important declaration, and that's ok!</p>
+  </div>
+
+  <div class="col-12">
+
+    <h3 class="heading heading--small">Positioning</h3>
+
+    <div class="grid">
+
+      <div class="col-3">
+        <pre><code class="language-css">.pos-relative</code></pre>
+      </div>
+
+      <div class="col-3">
+        <pre><code class="language-css">.pos-absolute</code></pre>
+      </div>
+
+      <div class="col-3">
+        <pre><code class="language-css">.pos-fixed</code></pre>
+      </div>
+
+      <div class="col-3">
+        <pre><code class="language-css">.pos-static</code></pre>
+      </div>
+
+
+    </div>
+
+    <p>These use text-align method:</p>
+
+    <div class="grid">
+
+      <div class="col-3">
+        <pre><code class="language-css">.align-left</code></pre>
+      </div>
+
+      <div class="col-3">
+        <pre><code class="language-css">.align-center</code></pre>
+      </div>
+
+      <div class="col-3">
+        <pre><code class="language-css">.align-right</code></pre>
+      </div>
+
+    </div>
+
+
+  </div>
+
+  <div class="col-12">
+
+    <h3 class="heading heading--small">Colors</h3>
+
+
+    <div class="grid">
+
+      <div class="col-3">
+        <pre><code class="language-css color-primary">.color-primary</code></pre>
+      </div>
+
+      <div class="col-3">
+        <pre><code class="language-css color-secondary">.color-secondary</code></pre>
+      </div>
+
+      <div class="col-3">
+        <pre><code class="language-css color-black">.color-black</code></pre>
+      </div>
+
+      <div class="col-3">
+        <pre><code class="language-css color-white">.color-white</code></pre>
+      </div>
+
+      <div class="col-3">
+        <pre><code class="language-css color-grey">.color-grey</code></pre>
+      </div>
+
+      <div class="col-3">
+        <pre class="fill-primary"><code class="language-css">.fill-profile</code></pre>
+      </div>
+
+      <div class="col-3">
+        <pre class="fill-secondary"><code class="language-css fill-secondary">.fill-secondary</code></pre>
+      </div>
+
+      <div class="col-3">
+        <pre class="fill-black"><code class="language-css fill-black">.fill-black</code></pre>
+      </div>
+
+      <div class="col-3">
+        <pre class="fill-white"><code class="language-css fill-white">.fill-white</code></pre>
+      </div>
+
+      <div class="col-3">
+        <pre class="fill-grey"><code class="language-css fill-grey">.fill-grey</code></pre>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="col-12">
+
+    <h3 class="heading heading--small">Typography</h3>
+
+    <div class="grid">
+
+      <div class="col-3">
+        <pre><code class="language-css lh-normal">.lh-normal</code></pre>
+      </div>
+
+      <div class="col-3">
+        <pre><code class="language-css fw-strong">.fw-strong</code></pre>
+      </div>
+
+      <div class="col-3">
+        <pre><code class="language-css font-serif">.font-serif</code></pre>
+      </div>
+
+      <div class="col-3">
+        <pre><code class="language-css font-sans-serif">.font-sans-serif</code></pre>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="col-12">
+
+    <h3 class="heading heading--small">Resets</h3>
+
+    <div class="grid">
+
+      <div class="col-3">
+        <pre><code class="language-css lh-normal no-margin">.no-margin</code></pre>
+      </div>
+
+      <div class="col-3">
+        <pre><code class="language-css fw-strong no-border">.no-border</code></pre>
+      </div>
+
+    </div>
+
+  </div>
+
+  <hr />
+
+  <div class="col-12">
+
+    <h3 class="heading heading--large">Layout</h3>
+    <p>This site use <a href="http://gridlex.devlint.fr/">Gridlex</a> for flexbox based layout, in a 12 column grid.</p>
+    <pre><code class="language-html">&lt;div class="grid"&gt;
+  &lt;div class="col-6_sm-12"&gt;
+    &lt;p&gt;Quick example of concept.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+  </div>
+
+  <hr />
+
+  <div class="col-12">
+
+    <h3 class="heading heading--large">Variables</h3>
+    <p>Some important site specific variables are:</p>
+
+    <pre><code class="language-scss">$speed: .25s;
+$margin: 1rem;
+$margin-sm: 0.5rem;</code></pre>
+
+  </div>
+
+</div>
+
+
+{% endblock %}

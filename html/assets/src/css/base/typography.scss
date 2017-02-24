@@ -1,0 +1,352 @@
+/* — — — VARIABLES — — — */
+
+$font-family--sans-serif: "open-sans", sans-serif;
+// $font-family--serif: Times, 'Times New Roman', serif;
+$font-family--standard: $font-family--sans-serif;
+
+
+/* — — — FONT SIZE MAPS — — — */
+
+$fs-p: (
+  null: (1em, 1.4),
+  md: (1.2em)
+);
+
+$fs-p-large: (
+  null  : (1.2em, 1.1),
+  md: (1.5em)
+);
+
+$fs-heading: (
+  null  : (2em, 1),
+  lg: (2.5em)
+);
+
+/* — — — STYLES — — — */
+
+a {
+   text-decoration: none;
+   &:visited {
+      color: inherit;
+   }
+}
+
+p  {
+  @include font-size($fs-p);
+}
+
+.typography--large p {
+  @include font-size($fs-p-large);
+}
+
+.heading {
+  @include font-size($fs-heading);
+}
+
+.heading {
+   font-family: $font-family--standard;
+   font-style: normal;
+   font-weight: 700;
+}
+.heading--small {
+   font-size: 1em;
+}
+.heading--medium {
+   font-size: 1.2em;
+}
+.heading--large {
+   font-weight: 800;
+   font-size: 1.3em;
+}
+.heading--xl {
+   font-weight: 800;
+   font-size: 1.4em;
+}
+.typography {
+   font-family: $font-family--standard;
+   font-weight: 600;
+   font-style: normal;
+}
+.typography--xs,
+.typography--small {
+   font-size: .7em;
+}
+.typography--medium {
+   font-size: .8em;
+}
+.typography--large {
+   font-size: 1em;
+}
+@include width-xs {
+   .heading--small {
+      font-size: 1em;
+   }
+   .heading--medium {
+      font-size: 1.4em;
+   }
+   .heading--large {
+      font-size: 1.8em;
+   }
+   .heading--xl {
+      font-size: 1.6em;
+   }
+   .typography--xs {
+      font-size: .7em;
+   }
+   .typography--small {
+      font-size: .8em;
+   }
+   .typography--medium {
+      font-size: .9em;
+   }
+   .typography--large {
+      font-size: 1.1em;
+   }
+}
+@include width-sm {
+   .heading--small {
+      font-size: 1em;
+   }
+   .heading--medium {
+      font-size: 1.4em;
+   }
+   .heading--large {
+      font-size: 2.2em;
+   }
+   .heading--xl {
+      font-size: 2em;
+   }
+   .typography--xs, {
+      font-size: .7em;
+   }
+   .typography--small {
+      font-size: .8em;
+   }
+   .typography--medium {
+      font-size: .9em;
+   }
+   .typography--large {
+      font-size: .9em;
+   }
+}
+@include width-md {
+   .heading--small {
+      font-size: 1em;
+   }
+   .heading--medium {
+      font-size: 1.8em;
+   }
+   .heading--large {
+      font-size: 2.2em;
+   }
+   .heading--xl {
+      font-size: 2.5em;
+   }
+   .typography--xs, {
+      font-size: .7em;
+   }
+   .typography--small {
+      font-size: .8em;
+   }
+   .typography--medium {
+      font-size: .9em;
+   }
+   .typography--large {
+      font-size: 1em;
+   }
+}
+@include width-lg {
+   .heading--small {
+      font-size: 1em;
+   }
+   .heading--medium {
+      font-size: 1.4em;
+   }
+   .heading--large {
+      font-size: 2.2em;
+   }
+   .heading--xl {
+      font-size: 3em;
+   }
+   .typography--xs {
+      font-size: .7em;
+   }
+   .typography--small {
+      font-size: .95em;
+   }
+   .typography--medium {
+      font-size: 1em;
+   }
+   .typography--large {
+      font-size: 1.2em;
+   }
+}
+@include width-xl {
+   .heading--small {
+      font-size: 1em;
+   }
+   .heading--medium {
+      font-size: 1.6em;
+   }
+   .heading--large,
+   .heading--xl {
+      font-size: 3.2em;
+   }
+}
+
+.wysiwyg {
+   h2 {
+      @extend .heading--large;
+   }
+   h3 {
+      @extend .heading--medium;
+   }
+   h4 {
+      @extend .heading--small
+   }
+   p {
+      margin-bottom: $margin;
+      line-height: 1.4em;
+      word-spacing: .06em;
+
+   }
+   a {
+      text-decoration: none;
+      border-bottom: 1px solid $color--primary-dark;
+      &:hover {
+         border-color: $color--primary;
+      }
+      &:link,
+      &:visited {
+         color: $color--links;
+      }
+   }
+   blockquote {
+      @extend .heading, .heading--medium;
+      position: relative;
+      display: block;
+      margin: 0 0 $margin*2 .1em;
+      &:before {
+         content: "\2018\2018";
+         font-family: sans-serif;
+         position: relative;
+         top: .42em;
+         left: 0;
+         font-size: 4.2em;
+         letter-spacing: -.05em;
+         color: $color--primary;
+         padding-right: .1em;
+      }
+   }
+   table {
+      border-collapse: collapse;
+      margin-bottom: $margin;
+      text-align: left;
+      tr:nth-child(even) {
+         background-color: $color--light-grey;
+      }
+      th {
+         padding: .4em 2em .8em .8em;
+      }
+      td {
+         padding: .4em 2em .4em 1em;
+      }
+   }
+   img {
+      width: 100%;
+      height: auto;
+   }
+   .wp-caption-text {
+      @extend .typography--small;
+   }
+   .wp-caption {
+      margin: $margin 0;
+      @include width-md {
+         position: relative;
+         display: table;
+         z-index: -1;
+         right: 25%;
+         width: 125%;
+         & + * {
+            clear: both;
+         }
+         img {
+            width: auto;
+            max-width: 50%;
+            height: auto;
+            // max-height: 75vh;
+            padding: $margin/4;
+            &:nth-child(odd) {
+               float: left;
+            }
+            &:nth-child(even) {
+               float: right;
+            }
+         }
+      }
+      // .alignnone
+   }
+   .wp-caption-text {
+      position: relative;
+      top: -5px;
+      display: block;
+      background-color: $color--light-grey;
+      @include width-md {
+         display: inline-block;
+         background-color: transparent;
+         position: absolute;
+         left: 50%;
+         right: $margin;
+         top: 0;
+         bottom: 0;
+         height: 30%;
+         margin: auto;
+      }
+   }
+  li {
+    @extend p;
+
+    margin-bottom: 0.25em;
+    &:last-child {
+      margin-bottom: 0.75em;
+    }
+
+    margin-left: 1em;
+
+    position: relative;
+    padding-left: 0;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      text-align: center;
+      left: -0.6em;
+      width: 4px;
+      height: 4px;
+      background: $color--black;
+      border-radius: 99em;
+      top: 0.45em;
+    }
+  }
+  ol,
+  ul {
+     margin: 0 0 $margin $margin;
+  }
+  ol li {
+    list-style: inherit !important;
+  }
+
+  ol {
+    display: list-item;
+    list-style: decimal; !important;
+  }
+    /* counter-reset: ol-counter;
+    li {
+      &:before {
+        color: $color--grey;
+        content: counter(ol-counter);
+  	     counter-increment: ol-counter;
+     }
+   } */
+}

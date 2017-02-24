@@ -1,0 +1,206 @@
+/* — — — ALIGNS — — — */
+
+.setting--align-left {
+  text-align: left;
+}
+
+.setting--align-center {
+  text-align: center;
+}
+
+.setting--align-right {
+  text-align: right;
+}
+
+/* — — — COLORS — — — */
+
+.setting--color-primary {
+  color: $color--primary !important;
+}
+
+.setting--color-secondary {
+  color: $color--secondary !important;
+}
+
+.setting--color-white {
+  color: #fff !important;
+  a {
+    color: #fff !important;
+  }
+  p a {
+    color: #fff;
+    border-color: #fff;
+  }
+}
+
+.setting--color-black {
+  color: $color--black !important;
+}
+
+.setting--color-grey {
+  color: $color--grey !important;
+}
+
+.setting--fill-primary {
+  background: $color--primary !important;
+}
+
+.setting--fill-secondary {
+  background: $color--secondary !important;
+  color: $color--white !important;
+}
+
+.setting--fill-white {
+  background: $color--white !important;
+}
+
+.setting--fill-black {
+  background: $color--black !important;
+  color: $color--white !important;
+}
+
+.setting--fill-grey {
+  background: $color--grey !important;
+}
+
+.setting--fill-light-grey {
+  background: #f6f6f6 !important;
+}
+
+
+
+
+
+/* — — — POSITIONS — — — */
+
+.setting--pos-relative {
+  position: relative;
+}
+
+.setting--pos-absolute {
+  position: absolute;
+}
+
+.setting--pos-fixed {
+  position: fixed;
+}
+
+.setting--pos-static {
+  position: static;
+}
+
+.setting--vertical-align {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* — — — TYPOPGRAPHY — — — */
+
+
+.setting--line-height-normal {
+  line-height: 1 !important;
+}
+
+.setting--font-weight-strong {
+  font-weight: 700 !important;
+}
+
+.setting--font-size-zero {
+  font-size: 0;
+}
+
+.setting--font-sans-serif {
+  font-family: $font-family--sans-serif !important;
+}
+
+.setting--case-uppercase {
+  text-transform: uppercase;
+}
+
+/* — — — RESETS — — — */
+
+.setting--no-margin {
+  margin: 0 !important;
+}
+
+.setting--no-padding {
+  padding: 0 !important;
+}
+
+.setting--no-padding-top {
+  padding-top: 0 !important;
+}
+
+.setting--no-border {
+  border: 0 !important;
+}
+
+/* — — — SITE SPECIFIC — — — */
+
+
+
+/* — — — GRID — — — */
+
+/*
+
+.grid, .col and .row classes are part of Gridlex
+
+<div class="the-lines">
+  <div class="grid">
+    <div class="col the-lines__col"></div>
+    <div class="col the-lines__col"></div>
+    <div class="col the-lines__col"></div>
+    <div class="col the-lines__col"></div>
+    <div class="col the-lines__col"></div>
+    <div class="col the-lines__col"></div>
+    <div class="col the-lines__col"></div>
+    <div class="col the-lines__col"></div>
+    <div class="col the-lines__col"></div>
+    <div class="col the-lines__col"></div>
+    <div class="col the-lines__col"></div>
+    <div class="col the-lines__col"></div>
+  </div>
+</div> */
+
+.the-lines {
+  display: none;
+  position: fixed !important;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-50%);
+  top: 0;
+  left: 50%;
+  z-index: 99;
+  transition: $speed opacity, $speed visibility;
+  .row {
+    height: 100%;
+  }
+  .show-grid & {
+    @include width-lg {
+      opacity: 0.15;
+      visibility: visible;
+    }
+  }
+}
+
+.the-lines__col {
+  border-left: 2px solid rgba(0,0,0,0.2);
+  &:last-of-type {
+    border-right: 2px solid rgba(0,0,0,0.2);
+  }
+  height: 100%;
+  position: relative;
+  &:before, &:after {
+    position: absolute;
+    left: calc(0.5rem - 2px);
+    height: 100%;
+    border-left: 1px solid #ccc;
+    content: '';
+  }
+  &:after {
+    left: auto;
+    right: calc(0.5rem - 2px);
+  }
+}

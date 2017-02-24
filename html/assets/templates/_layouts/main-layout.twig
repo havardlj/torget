@@ -1,0 +1,19 @@
+<!doctype html>
+<html class="no-js" lang="{% if craft.locale=='no' %}no{% else %}en{% endif %}">
+
+<head>
+	{% include '_includes/html-head' %}
+</head>
+
+<body class="{% if bodyClass is defined %}{{ bodyClass }}{% endif %}">
+
+  {% include '_includes/site-header' %}
+
+  <main role="main" class="mainContent">
+    {% block content %}{% endblock %}
+  </main>
+
+  {% include '_includes/site-footer' %}
+
+</body>
+</html>
